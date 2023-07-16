@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+
+<style>
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+}
+
+</style>
+</head>
+<body>
+
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <img src="https://zaka.ai/wp-content/uploads/2023/06/featured-image-648815a8c6010-scaled.webp" alt="" width="30" height="24">
+      <span class="navbar-brand mb-0 h1">Home</span>
+    </div>
+  </nav>
+
+<div class="container mt-4">
+  <h2 class="text-center">Translation Machine</h2>
+</div>
+<div class="container d-flex flex-row justify-content-evenly mt-4 gap-3 w-90">
+  <div class="card w-50">
+    <div class="card-body">
+      <h5 class="card-title">Translate Here</h5>
+      <form action="/translate" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" id="inputsentence" placeholder="Enter your sentence here" name="sentence">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="card w-50">
+    <div class="card-body">
+      <h5 class="card-title">Translation</h5>
+      {% if translation %}
+        <h6>Translated Sentence: {{ translation }}</h6>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
